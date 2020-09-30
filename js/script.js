@@ -48,4 +48,8 @@ const isCheked = true,
 
 console.log(isCheked && isClose);
 
+
+let me = 4;
+
+
       
