@@ -89,17 +89,30 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt("One of latest watched film", ''),
-      b = prompt("How do you like it ? (0-10)", ''),
-      c = prompt("One of latest watched film", ''),
-      d = prompt("How do you like it ? (0-10)", '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+for (let i = 0; i < numberOfFilms; i++) {
+    const a = prompt("One of latest watched film", ''),
+          b = prompt("How do you like it ? (0-10)", '');
+
+        if (a.length > 30 || a == '' ) {
+            console.log("shit, you`ve made a mistake");
+            i--;
+            continue;
+        } else {
+            personalMovieDB.movies[a] = b;
+        }
+}
 
 console.log(personalMovieDB);
 
-console.log(personalMovieDB.count);
-console.log(a.length);
 
+if (personalMovieDB.count < 10) {
+    console.log('Ur shitty filmoman');
+} else if (10 < personalMovieDB.count < 30){
+    console.log('Ur common filmoman');
+} else if (personalMovieDB.count > 30){
+    console.log('Ur fckng filmoman');
+} else {
+    console.log('ERROR');
+}
 
