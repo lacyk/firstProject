@@ -34,22 +34,40 @@
 
 // console.log(`https://someurl.com/${category}/4`);
 
-let incr = 10,
-    decr = 10;
+// let incr = 10,
+//     decr = 10;
 
-    // incr++;
-    // decr--;
+//     // incr++;
+//     // decr--;
 
-console.log(++incr);
-console.log(--decr); 
+// console.log(++incr);
+// console.log(--decr); 
 
-const isCheked = true,
-      isClose = true;
+// const isCheked = true,
+//       isClose = true;
 
-console.log(isCheked && isClose);
-
-
-let me = 4;
+// console.log(isCheked && isClose);
 
 
-      
+// let me = 4;
+
+
+const numberOfFilms = +prompt('How many films did you watch?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt("One of latest watched film", ''),
+      b = prompt("How do you like it ? (0-10)", ''),
+      c = prompt("One of latest watched film", ''),
+      d = prompt("How do you like it ? (0-10)", '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
