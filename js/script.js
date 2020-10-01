@@ -12,12 +12,6 @@
 // let arr = ['apple.jpg', 'grapes.png', 5, 'strawberry.gif', [], {}];  
 // console.log(arr[5]);
 
-// console.log(5 ** 2);
-
-// alert("Hi mate");
-
-// const result = confirm("Are you here ?");
-// console.log(result);
 
 // const answr = prompt ("Are you 18 ?", "");
 // console.log(typeof(answr));
@@ -34,40 +28,57 @@
 
 // console.log(`https://someurl.com/${category}/4`);
 
-// let incr = 10,
-//     decr = 10;
+// const numberOfFilms = +prompt('How many films did you watch?', '');
 
-//     // incr++;
-//     // decr--;
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-// console.log(++incr);
-// console.log(--decr); 
+// const a = prompt("One of latest watched film", ''),
+//       b = prompt("How do you like it ? (0-10)", ''),
+//       c = prompt("One of latest watched film", ''),
+//       d = prompt("How do you like it ? (0-10)", '');
 
-// const isCheked = true,
-//       isClose = true;
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
 
-// console.log(isCheked && isClose);
-
-
-// let me = 4;
+// console.log(personalMovieDB);
 
 
-const numberOfFilms = +prompt('How many films did you watch?', '');
+// if (4 == 9) {
+//     console.log('ok');
+// } else {
+//     console.log('ohohoho');
+// }
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
 
-const a = prompt("One of latest watched film", ''),
-      b = prompt("How do you like it ? (0-10)", ''),
-      c = prompt("One of latest watched film", ''),
-      d = prompt("How do you like it ? (0-10)", '');
+// if (num < 49) {
+//     console.log('Error!');
+// } else if (num > 100){
+//     console.log('Too much');
+// } else {
+//     console.log('Yes !');
+// }
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+const num = 100;
 
-console.log(personalMovieDB);
+// (num === 50) ? console.log("Ok!") : console.log('Error!');
+
+switch (num) {
+    case 49:
+        console.log('Not true');
+        break; 
+    case 100:
+        console.log('Not true');
+        break; 
+    case 50:
+        console.log('TRUE');
+        break;
+    default:
+        console.log('Not this time');
+        break;
+}
