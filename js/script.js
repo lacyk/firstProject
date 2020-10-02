@@ -94,7 +94,7 @@ for (let i = 0; i < numberOfFilms; i++) {
     const a = prompt("One of latest watched film", ''),
           b = prompt("How do you like it ? (0-10)", '');
 
-        if (a.length > 30 || a == '' ) {
+        if (a.length > 30 ||  a == '' || b == '') {
             console.log("shit, you`ve made a mistake");
             i--;
             continue;
@@ -106,7 +106,7 @@ for (let i = 0; i < numberOfFilms; i++) {
 console.log(personalMovieDB);
 
 
-if (personalMovieDB.count < 10) {
+if (1 <= personalMovieDB.count < 10) {
     console.log('Ur shitty filmoman');
 } else if (10 < personalMovieDB.count < 30){
     console.log('Ur common filmoman');
