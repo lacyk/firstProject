@@ -79,7 +79,17 @@
 //     console.log(i);
 // }
 
-const numberOfFilms = +prompt('How many films did you watch?', '');
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('How many films did you watch?', '');
+
+    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('How many films did you watch?', '');
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -90,29 +100,57 @@ const personalMovieDB = {
 };
 
 
-for (let i = 0; i < numberOfFilms; i++) {
-    const a = prompt("One of latest watched film", ''),
-          b = prompt("How do you like it ? (0-10)", '');
+function rememberMyFilms () {
 
-        if (a.length > 30 ||  a == '' || b == '') {
-            console.log("shit, you`ve made a mistake");
-            i--;
-            continue;
-        } else {
-            personalMovieDB.movies[a] = b;
-        }
+    for (let i = 0; i < numberOfFilms; i++) {
+
+        const a = prompt("One of latest watched film", ''),
+              b = prompt("How do you like it ? (0-10)", '');
+    
+            if (a.length < 50 ||  a != '' || b != '' || a != null || b != null) {
+
+                personalMovieDB.movies[a] = b;
+
+            } else {
+                console.log("shit, you`ve made a mistake");
+                i--;
+                continue;
+            }
+    }
 }
 
-console.log(personalMovieDB);
+rememberMyFilms();
 
 
-if (1 <= personalMovieDB.count < 10) {
-    console.log('Ur shitty filmoman');
-} else if (10 < personalMovieDB.count < 30){
-    console.log('Ur common filmoman');
-} else if (personalMovieDB.count > 30){
-    console.log('Ur fckng filmoman');
-} else {
-    console.log('ERROR');
+function detectPersonalLevel() {
+    if (1 <= personalMovieDB.count < 10) {
+        console.log('Ur shitty filmoman');
+    } else if (10 < personalMovieDB.count < 30){
+        console.log('Ur common filmoman');
+    } else if (personalMovieDB.count > 30){
+        console.log('Ur fckng filmoman');
+    } else {
+        console.log('ERROR');
+    }    
 }
- 
+
+// detectPersonalLevel();
+
+
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+
+function writeYourGenres (){
+
+    for (let i = 0; i < 3; i++) {
+        const a = prompt('Which is your favourite genre ?');
+        personalMovieDB.genres.push(a);
+    }
+}
+
+writeYourGenres();
+showMyDB();
