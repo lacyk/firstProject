@@ -137,20 +137,34 @@ function detectPersonalLevel() {
 // detectPersonalLevel();
 
 
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
+// function showMyDB() {
+//     if (personalMovieDB.privat == false) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+function showMyDB(hidden) {
+    if (!hidden) {
         console.log(personalMovieDB);
     }
 }
-
+ 
 
 function writeYourGenres (){
 
-    for (let i = 0; i < 3; i++) {
-        const a = prompt('Which is your favourite genre ?');
-        personalMovieDB.genres.push(a);
+
+    for (let i = 1; i < 4; i++) {
+
+        const a = prompt(`Which is your number ${i} favourite genre ?`);
+
+        if (a != '' || a != null) {
+            personalMovieDB.genres.push(a);
+        } else {
+            i--;
+            continue;
+        }
     }
 }
 
 writeYourGenres();
-showMyDB();
+showMyDB(personalMovieDB.privat);
