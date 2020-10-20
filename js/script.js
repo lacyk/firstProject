@@ -1,104 +1,64 @@
-"use strict";
+'use strict';
 
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    remember: function rememberMyFilms () {
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName('button'),
+      circles = document.getElementsByClassName('circle'),
+      hearts = document.querySelectorAll('.heart'),
+      oneHeart = document.querySelector('.heart'),
+      wrapper = document.querySelector('.wrapper'),
+      crc = document.querySelectorAll('.circle');
 
-                for (let i = 0; i < personalMovieDB.count; i++) {
+console.dir(box);
+// box.style.background = 'blue';
 
-                    const a = prompt("One of latest watched film", ''),
-                        b = prompt("How do you like it ? (0-10)", '');
-                
-                        if (a.length < 50 ||  a != '' || b != '' || a != null || b != null) {
+box.style.cssText = 'background-color: green; width: 500px';
 
-                            personalMovieDB.movies[a] = b;
+btns[1].style.borderRadius = '100%';
 
-                        } else {
-                            console.log("shit, you`ve made a mistake");
-                            i--;
-                            continue;
-                        }
-                }
-            },
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[i].style.background = 'yellow';
+// }
 
-    show: function showMyDB(hidden) {
-
-                if (!hidden) {
-                    console.log(personalMovieDB);
-                }
-            },
-
-    writeGenres: function writeYourGenres (){
+// hearts.forEach(item => {
+//     item.style.backgroundColor = 'blue'; 
+// });
 
 
-                for (let i = 1; i <= 3; i++) {
-            
-                    const a = prompt(`Which is your number ${i} favourite genre ?`);
-            
-                    if (a != '' && a != null) {
-                        personalMovieDB.genres.push(a);
-                    } else {
-                        i--;
-                        continue;
-                    }
-                }
-                // personalMovieDB.genres.forEach(element => console.log(element));
-                personalMovieDB.genres.forEach((item, i) => {
-                    console.log(`Favorite genre N${i+1} is ${item}`); 
-                });
-            },
-            
-    myLvl: function detectPersonalLevel() {
-        if (1 <= personalMovieDB.count < 10) {
-            console.log('Ur shitty filmoman');
-        } else if (10 < personalMovieDB.count < 30){
-            console.log('Ur common filmoman');
-        } else if (personalMovieDB.count > 30){
-            console.log('Ur fckng filmoman');
-        } else {
-            console.log('ERROR');
-        }    
-    },
-
-    toggle: function toggleVisibleMyDB(param) {
-        // if (param != true) {
-        //     param = true;
-        //     personalMovieDB.privat = param;
-        // } else {
-        //     param = false;
-        //     personalMovieDB.privat = param;
-        // }
-        if (personalMovieDB.privat) {
-            personalMovieDB.privat = false;
-        } else {
-            personalMovieDB.privat = true;
-        }
-        
-
-        return param;
-    },
-
-    startT: function start() {
-        personalMovieDB.count = +prompt('How many films did you watch?', '');
-    
-        while(personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-            personalMovieDB.count = +prompt('How many films did you watch?', '');
-        }
-    }
-};
+const div = document.createElement('div');
+const text = document.createTextNode('I was here');
+div.classList.add('black');
+// div.style.width = '500px';
+div.style.cssText = 'width: 500px; height: 250px';
 
 
-// console.log(personalMovieDB.toggle(personalMovieDB.privat));
+wrapper.append(div);
+div.innerHTML = '<h1>Hello There</h1>'.toUpperCase();
 
-// personalMovieDB.startT();
-// personalMovieDB.remember();
-personalMovieDB.writeGenres();
-// personalMovieDB.show(personalMovieDB.privat);
+// div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); // вставка елементу до початку 
+// div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>'); // вставка елементу після початку 
+// div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>'); // вставка елементу після початку 
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>'); // вставка елементу після початку 
 
 
-// writeYourGenres();
-// showMyDB(personalMovieDB.privat);
+// div.textContent = 'Hello ';
+// text.classList.add('black');
+// hearts[0].before(text);
+
+// wrapper.style.background = 'green';
+
+// document.body.append(wrapper);
+// document.body.prepend(div);
+
+
+// hearts[0].before(div);
+// hearts[0].after(div);
+
+// hearts[0].replaceWith(circles[0]);
+// circles[0].remove();
+// hearts[0]. before
+
+//  
+// console.log(crc);
+
+// hearts[0].replaceWith(crc[0]);
+// crc[0].replaceWith(hearts[0]);
