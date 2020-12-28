@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const tabs = document.querySelectorAll('.tabheader__item'),
           tabsContent = document.querySelectorAll('.tabcontent'),
-          tabsParent = document.querySelector('.tabheader__items');
+          tabsParent = document.querySelector('.tabheader__items'),
+          cont = document.querySelector('#cont');
 
     function hideTabContent() {
         tabsContent.forEach(item => {
@@ -105,6 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
     function openModal() {
         modal.classList.add('show');
         modal.classList.remove('hide');
@@ -133,7 +135,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const modalTimerID = setTimeout(openModal, 3000);
+    // const modalTimerID = setTimeout(openModal, 3000);
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
@@ -142,6 +144,42 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     window.addEventListener('scroll', showModalByScroll);
+
+    // using classes
+
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt; 
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parentSelector = document.querySelector(parentSelector);
+            this.transfer = 27;
+            this.changeToUAH();
+        }
+
+        changeToUAH() {
+            this.price = this.price * this.transfer;
+        }
+
+        render() {
+            const element = document.createElement('div');
+            const newLocal = element.innerHTML = `
+                <div class="menu__item">
+                    <img src="img/tabs/vegy.jpg" alt="vegy">
+                    <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
+                    <div class="menu__item-descr">Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. 
+                    Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>229</span> грн/день</div>
+                    </div>
+                </div>
+            `;
+        }
+    }
 
 });
 

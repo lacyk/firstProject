@@ -71,16 +71,19 @@
 
 // console.log(ivan);
 
-function sayName(surname)  {
-    console.log(this);
-    console.log(this.name + surname);
-}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 
-const user = {
-    name: 'John'
-};
+// function sayName(surname)  {
+//     console.log(this);
+//     console.log(this.name + surname);
+// }
 
-sayName.call(user, 'Gold');
-// sayName.apply(user);
+// const user = {
+//     name: 'John'
+// };
 
-sayName();
+// sayName.call(user, 'Gold');
+// // sayName.apply(user);
+
+// sayName();
+

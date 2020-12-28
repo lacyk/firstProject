@@ -29,3 +29,31 @@ ivan.hello();
 ivan.exit();
 
 // console.log(ivan);  
+
+// const btn = document.querySelector('.bobb');
+
+// btn.addEventListener('click', function (e) {
+//     console.log(e);
+//     e.target.style.backgroundColor = 'red';
+//     e.target.style.fontSize = "50px";
+//     // this.style.backgroundColor = 'red';
+// });
+
+// function Kratka(num) {
+//     for (let i = 0; i < num; i++) {
+//         const a = '#';
+//         console.log(a.repeat(i+1));
+//     }
+// }
+
+// Kratka(4);
+
+
+const obj = {
+    name: 'John',
+    age: 26,  
+    sayGreetings() {
+        console.log(this.name);
+    }
+};
+obj.sayGreetings();
